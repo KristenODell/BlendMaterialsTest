@@ -8,13 +8,13 @@ public class FollowCursor : MonoBehaviour
     public GameObject halo;
     float wait = .2f;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         //halo = GetComponent<GameObject>();
         halo.SetActive(false);
-	}
-    
+    }
+
     public IEnumerator ShootHalo()
     {
         while (i > 0)
@@ -25,16 +25,16 @@ public class FollowCursor : MonoBehaviour
         }
         halo.SetActive(false);
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5));
-        if(Input.GetMouseButtonDown(0))
+        Cursor.lockState = CursorLockMode.Confined;
+        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 1));
+        if (Input.GetMouseButtonDown(0))
         {
             i = 5;
             StartCoroutine(ShootHalo());
         }
-	}
-
+    }
 }

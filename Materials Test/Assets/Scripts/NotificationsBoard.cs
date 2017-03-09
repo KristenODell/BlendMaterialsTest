@@ -14,12 +14,12 @@ public class NotificationsBoard : MonoBehaviour
     void Update ()
     {
 
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             notifications.SetBool("Start", true);
             notifications.SetBool("Down", false);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
             notifications.SetBool("Down", true);
             notifications.SetBool("Start", false);
