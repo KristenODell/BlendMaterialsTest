@@ -20,32 +20,29 @@ public class CubeInteraction : MonoBehaviour
 	
 	void Update ()
     {
-	    if(gazedAt == true)
-        {
-            timer += Time.deltaTime;
+	   // if(gazedAt == true)
+       // {
+          //  timer += Time.deltaTime;
             
             //if(timer >= gazeTime)
             //{
             //    ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerDownHandler);
             //}
-        }
+       // }
 	}
 
     public void PointerEnter ()
     {
-        print("pointer enter");
+        //print("pointer enter");
         anim.SetBool("Pointer", true);
     }
 
     public void PointerExit ()
     {
-        print("pointer exit");
-        gazedAt = false;
+        //print("pointer exit");
+        //gazedAt = false;
         anim.SetBool("Pointer", false);
     }
 
-    public void PointerClick ()
-    {
-        print("pointer down");
-    }
+    
 }
