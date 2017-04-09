@@ -9,7 +9,7 @@ public class DamagingDinosaur : MonoBehaviour
     public int maxDamage = 100;
     SkinnedMeshRenderer dinosaur;
     public bool armor;
-
+    //public AnimToRagdoll _health;
     Rigidbody rig;
 
     void Start()
@@ -29,8 +29,9 @@ public class DamagingDinosaur : MonoBehaviour
 
     void OnTriggerEnter()
     {
+      //  _health.health--;
         damage += increasingDamage;
-        //dinosaur.SetBlendShapeWeight(1, damage);
+        dinosaur.SetBlendShapeWeight(0, damage);
         if (armor == true && damage >= 100)
         {
             rig.mass = 1;
